@@ -100,4 +100,18 @@ class TodoListController extends Controller
         TodoList::findOrFail($toBeDeletedID->id)->delete();
         return redirect('/');
     }
+
+    public function getActiveTodos()
+    {
+        $todoList = TodoList::all()->where('isActive', true);
+
+        return view('home', compact('todoList'));
+    }
+
+    public function getCompletedTodos()
+    {
+        $todoList = TodoList::all()->where('isActive', false);
+
+        return view('home', compact('todoList'));
+    }
 }
