@@ -82,6 +82,7 @@ class TodoListController extends Controller
 
         $todo->title   = $request->title;
         $todo->content = $request->content;
+        $todo->isActive = $request->isActive;
         $todo->due     = Carbon::parse($request->date . ' ' . $request->time);
         $todo->save();
 

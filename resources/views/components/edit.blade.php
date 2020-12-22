@@ -16,6 +16,10 @@
       <input type="date" name="date" value="{{ $todo->getDueDateValue($todo) }}">
       <input type="time" name="time" value="{{ $todo->getDueTimeValue($todo) }}">
     </div>
+    <div class="form-group">
+      <label for="">Is this active?</label>
+      <input type="checkbox" name="isActive" id="" value="{{ $todo->isActive }}" {{ $todo->isActive == true? 'checked' : ''}}>
+    </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>  

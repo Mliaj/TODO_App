@@ -18,6 +18,7 @@ class CreateTodoListsTable extends Migration
             $table->string('title', 50);
             $table->string('content', 300);
             $table->datetime('due');
+            $table->boolean('isActive')->default(1);
             // $table->datetime('completion');
             $table->timestamps();
         });
