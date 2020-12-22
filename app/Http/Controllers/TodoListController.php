@@ -60,12 +60,12 @@ class TodoListController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Request  $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $toBeEditedID)
+    public function edit(int $id)
     {
-        $todo = TodoList::findOrFail($toBeEditedID->id);
+        $todo = TodoList::findOrFail($id);
         return view('components.edit', compact('todo'));
     }
 

@@ -13,8 +13,8 @@
 
 Route::get('/', 'TodoListController@index')->name('home');
 Route::get('/add', 'TodoListController@create');
-Route::post('/store', 'TodoListController@store');
-Route::get('/edit', 'TodoListController@edit');
+Route::post('/store', 'TodoListController@store')->name('store');
+Route::get('/edit/{id}', 'TodoListController@edit')->name('editTodo');
 Route::post('/update/{id}', 'TodoListController@update');
 Route::post('/delete', 'TodoListController@destroy')->name('delete');
 
