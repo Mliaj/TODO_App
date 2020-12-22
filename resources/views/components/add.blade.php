@@ -13,8 +13,8 @@
     </div>
     <div class="form-group">
       <label for="">Date and Time of completion</label>
-      <input type="date" name="date">
-      <input type="time" name="time">
+      <input type="date" name="date" required>
+      <input type="time" name="time" required>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>  

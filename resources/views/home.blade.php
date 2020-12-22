@@ -5,9 +5,11 @@
 
         <div class="jumbotron">
             <a href="/add" class="btn btn-primary">Add</a>
-            <a href="#" class="btn btn-primary">Edit</a>
-            <button class="btn btn-primary">Delete</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target=".edit-modal">Edit</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target=".delete-modal">Delete</button>
         </div>
 
         @include('components.todo_list')
+        @include('components.delete_search_modal')
+        @include('components.edit_search_modal')
 @endsection

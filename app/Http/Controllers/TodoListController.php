@@ -60,12 +60,13 @@ class TodoListController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Request  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $toBeEditedID)
     {
-        //
+        $todo = TodoList::findOrFail($toBeEditedID->id);
+        return view('components.edit', compact('todo'));
     }
 
     /**
@@ -77,17 +78,25 @@ class TodoListController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $todo = TodoList::findOrFail($id);
+
+        $todo->title   = $request->title;
+        $todo->content = $request->content;
+        $todo->due     = Carbon::parse($request->date . ' ' . $request->time);
+        $todo->save();
+
+        return redirect('/');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Request  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $toBeDeletedID)
     {
-        //
+        TodoList::findOrFail($toBeDeletedID->id)->delete();
+        return redirect('/');
     }
 }
