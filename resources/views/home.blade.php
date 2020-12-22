@@ -6,7 +6,7 @@
         <div class="jumbotron">
             <a href="/add" class="btn btn-primary">Add</a>
             <button class="btn btn-primary" data-toggle="modal" data-target=".edit-modal">Edit</button>
-            <button class="btn btn-primary" data-toggle="modal" data-target=".delete-modal">Delete</button>
+            {{-- <button class="btn btn-primary" data-toggle="modal" data-target=".delete-modal">Delete</button> --}}
             <br><br>
 
             <label for="">Filter</label><br>

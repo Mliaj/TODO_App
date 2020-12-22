@@ -12,6 +12,7 @@
             <form action="/delete" method="POST">
                 {{ csrf_field() }}
                 <input type="text" class="form-control" name="id" required>
+                <input type="hidden" name="routeName" value="{{ Route::currentRouteName() }}">
         </div>
         <div class="modal-footer">
             <button type="submit" class="btn btn-block btn-danger">Delete</button>

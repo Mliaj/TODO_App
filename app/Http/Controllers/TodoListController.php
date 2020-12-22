@@ -98,7 +98,7 @@ class TodoListController extends Controller
     public function destroy(Request $toBeDeletedID)
     {
         TodoList::findOrFail($toBeDeletedID->id)->delete();
-        return redirect('/');
+        return redirect()->route($toBeDeletedID->routeName);
     }
 
     public function getActiveTodos()
