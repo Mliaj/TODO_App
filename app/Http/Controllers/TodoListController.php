@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\TodoList;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TodoListController extends Controller
@@ -13,7 +15,8 @@ class TodoListController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $todoList = TodoList::all();
+        return view('home', compact('todoList'));
     }
 
     /**
@@ -23,7 +26,7 @@ class TodoListController extends Controller
      */
     public function create()
     {
-        //
+        return view('components.add');
     }
 
     /**
@@ -34,7 +37,13 @@ class TodoListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $todo = new TodoList();
+        $todo->title   = $request->title;
+        $todo->content = $request->content;
+        $todo->due     = Carbon::parse($request->date . ' ' . $request->time);
+        $todo->save();
+
+        return redirect('/');
     }
 
     /**

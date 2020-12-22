@@ -15,8 +15,10 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        @yield('content')
-        
+        <div class="container">
+            @yield('content')
+        </div>
+
         <script src="/js/app.js"></script>
     </body>
 </html>

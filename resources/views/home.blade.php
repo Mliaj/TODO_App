@@ -1,14 +1,13 @@
 @extends('template')
 
 @section('content')
-    <div class="container">
         <h1>TODO App</h1>
 
         <div class="jumbotron">
-            <button class="btn btn-primary">Add</button>
-            <button class="btn btn-primary">Edit</button>
+            <a href="/add" class="btn btn-primary">Add</a>
+            <a href="#" class="btn btn-primary">Edit</a>
             <button class="btn btn-primary">Delete</button>
         </div>
-        
-    </div>
+
+        @include('components.todo_list')
 @endsection
